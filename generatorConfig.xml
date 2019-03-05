@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+ PUBLIC " -//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+ "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!--     <classPathEntry location="F:/workspace/jzhotel-service/target/lib/mysql-connector-java-5.1.46.jar"/> -->
+    <context id="my" targetRuntime="MyBatis3">
+    <property name="javaFileEncoding" value="UTF-8"/>
+        <commentGenerator type="org.mybatis.generator.MyCommentGenerator">
+           <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+		<!-- oracle -->
+		<!-- <jdbcConnection password="oauth" userId="oauth" connectionURL="jdbc:oracle:thin:@203.91.45.50:1521:orcl" driverClass="oracle.jdbc.driver.OracleDriver"/> -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://193.112.43.235:3306/poile_arlog" 
+                        userId="root"
+                        password="ab452637"/>
+                        <javaTypeResolver>
+                 <!--类型解析器-->
+                 <!-- 默认false，把jdbc decimal 和 numeric 类型解析为integer -->
+	         <!-- true，把jdbc decimal 和 numeric 类型解析为java.math.bigdecimal
+			<property name="forceBigDecimals" value="true" /> -->
+		</javaTypeResolver>
+		
+		
+		<!-- windows 路径：F:/github-repos/poile-ucs/ucs-myspace/src/main/java"-->
+		<!-- 生成model实体类文件位置 -->
+		<javaModelGenerator targetPackage="com.poile.ucs.model"
+                            targetProject="F:/github-repos/poile-ucs/ucs-myspace/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成mapper.xml配置文件位置 -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="F:/github-repos/poile-ucs/ucs-myspace/src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+	
+        <!-- 生成mapper接口文件位置 -->
+        <javaClientGenerator targetPackage="com.poile.ucs.mapper"
+                             targetProject="F:/github-repos/poile-ucs/ucs-myspace/src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        
+	     <table tableName="role" domainObjectName="Role"
+	       enableCountByExample="false" enableUpdateByExample="false"
+	       enableDeleteByExample="false" enableSelectByExample="false"
+	       selectByExampleQueryId="false" >
+		<property name="useActualColumnNames" value="true"/>  		   
+       </table> 
+	   
+    </context>
+</generatorConfiguration>
