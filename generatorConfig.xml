@@ -50,7 +50,7 @@
 		   <!-- 直接使用数据库字段名作为类字段名-->
 		<property name="useActualColumnNames" value="true"/>  
 		<!-- longtext类型转换-->
-		<!--<columnOverride column="articleTabloid" javaType="java.lang.String" jdbcType="LONGVARCHAR" /> -->	
+		<!--<columnOverride column="articleTabloid" javaType="java.lang.String" jdbcType="VARCHAR" /> -->	
        </table> 
 	   
     </context>
