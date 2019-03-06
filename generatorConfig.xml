@@ -49,7 +49,7 @@
 	       selectByExampleQueryId="false" >
 		   <!-- 直接使用数据库字段名作为类字段名-->
 		<property name="useActualColumnNames" value="true"/>  
-		<!-- longtext类型转换-->
+		<!-- longtext类型转换,要不然会有两个类生成，后面可以手动修改mapper.xml文件jdbcType="LONGVARCHAR"-->
 		<!--<columnOverride column="articleTabloid" javaType="java.lang.String" jdbcType="VARCHAR" /> -->	
        </table> 
 	   
