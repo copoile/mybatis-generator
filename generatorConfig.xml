@@ -11,11 +11,11 @@
             <property name="suppressAllComments" value="false"/>
         </commentGenerator>
 		<!-- oracle -->
-		<!-- <jdbcConnection password="oauth" userId="oauth" connectionURL="jdbc:oracle:thin:@203.91.45.50:1521:orcl" driverClass="oracle.jdbc.driver.OracleDriver"/> -->
+		<!-- <jdbcConnection password="oauth" userId="oauth" connectionURL="jdbc:oracle:thin:@203.91.45.51:1521:orcl" driverClass="oracle.jdbc.driver.OracleDriver"/> -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://193.112.43.235:3306/poile_arlog" 
+                        connectionURL="jdbc:mysql://193.112.43.231:3306/poile_arlog" 
                         userId="root"
-                        password="ab452637"/>
+                        password="123456"/>
                         <javaTypeResolver>
                  <!--类型解析器-->
                  <!-- 默认false，把jdbc decimal 和 numeric 类型解析为integer -->
@@ -47,7 +47,10 @@
 	       enableCountByExample="false" enableUpdateByExample="false"
 	       enableDeleteByExample="false" enableSelectByExample="false"
 	       selectByExampleQueryId="false" >
-		<property name="useActualColumnNames" value="true"/>  		   
+		   <!-- 直接使用数据库字段名作为类字段名-->
+		<property name="useActualColumnNames" value="true"/>  
+		<!-- longtext类型转换-->
+		<!--<columnOverride column="articleTabloid" javaType="java.lang.String" jdbcType="LONGVARCHAR" /> -->	
        </table> 
 	   
     </context>
